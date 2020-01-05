@@ -1,7 +1,7 @@
 import os
 
 
-class Image():
+class C64File:
 
     def __init__(self, filename=None):
         self.file = None

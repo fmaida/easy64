@@ -20,21 +20,21 @@ def i_do_not_exists():
     return my_path
 
 def test_recognizement_01(santron):
-    gigetto = easy64.Image()
+    gigetto = easy64.C64File()
     gigetto.load(santron)
     assert gigetto.file is not None
 
 def test_file_exists_01(santron):
-    gigetto = easy64.Image()
+    gigetto = easy64.C64File()
     gigetto.load(santron)
 
 def test_file_do_not_exists_01(i_do_not_exists):
     with raises(FileNotFoundError) as ex:
-        gigetto = easy64.Image()
+        gigetto = easy64.C64File()
         gigetto.load(i_do_not_exists)
 
 def test_write_cjm_01(santron):
-    gigetto = easy64.Image(filename=santron)
+    gigetto = easy64.C64File(filename=santron)
     my_path = gigetto.save_cjm()
     # breakpoint()
     assert os.path.exists(my_path)

@@ -1,1 +1,1 @@
-from .image import Image
+from .c64file import C64File
